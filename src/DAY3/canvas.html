@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas</title>
+  <style>
+    canvas{
+      border: 1px dashed black;
+    }
+  </style>
+
+  <script src="scripts.js"></script>
+</head>
+<body>
+
+  - Pen Color -<br>
+  <img id="redPen" src="pen_red.gif" alt="Red Pen" onclick="changeColor('rgb(212,21,29)', this)">
+  <img id="greenPen" src="pen_green.gif" alt="Green Pen" onclick="changeColor('rgb(131,190,61)', this)"> 
+  <img id="bluePen" src="pen_blue.gif" alt="Blue Pen" onclick="changeColor('rgb(0,86,166)', this)">
+  </div>
+
+  <div class="Toolbar">
+    - Pen Thickness -<br>
+    <img src="pen_thin.gif" alt="Thin Pen" onclick="changeThickness(1, this)">
+    <img src="pen_medium.gif" alt="Medium Pen" onclick="changeThickness(5, this)"> 
+    <img src="pen_thick.gif" alt="Thick Pen" onclick="changeThickness(10, this)">
+  </div>
+
+  <div class="CanvasContainer">
+    <canvas id="drawingCanvas" width="500" height="300"></canvas>
+  </div>
+
+  <div class="Toolbar">
+    - Operations -<br>
+    <button onclick="saveCanvas()">Save the Canvas</button>
+    <button onclick="clearCanvas()">Clear the Canvas</button>
+    <div id="savedCopyContainer">
+      <img id="savedImageCopy"><br>
+      Right-click to save ...
+    </div>
+  </div>
+
+</body>
+
+
+  <!--
+  template
+  <script>
+    window.onload = function(){
+      let canvas = document.getElementById('drawingCanvas');
+      let context = canvas.getContext('2d');
+
+    }
+  </script>
+  -->
+
+  <!-- script1 -->
+  <!-- <script>
+    window.onload = function(){
+      let canvas = document.getElementById("drawingCanvas");
+      let context = canvas.getContext("2d");
+
+
+      context.lineWidth = 10;
+      context.strokeStyle = "rgb(205,40,40)";
+      context.moveTo(10,50);
+      context.lineTo(400,50);
+      context.stroke();
+
+      context.beginPath();
+      context.moveTo(10,120);
+      context.lineTo(400,120);
+      context.lineCap = "round";
+      context.stroke();
+
+      context.beginPath();
+      context.moveTo(10, 190);
+      context.lineTo(400,190);
+      context.lineCap = "square";
+      context.stroke();
+
+      context.moveTo(250, 50);
+      context.lineTo(50, 250);
+      context.lineTo(450,250);
+      context.lineTo(250, 50);
+
+      context.lineWidth = 10;
+      context.strokeStyle = "red";
+      context.stroke();
+    }
+  </script> -->
+
+  <!-- script2 -->
+<!--   <script>
+    window.onload = function(){
+      let canvas = document.getElementById("drawingCanvas");
+      let context = canvas.getContext("2d");
+
+      context.moveTo(250, 50);
+      context.lineTo(50, 250);
+      context.lineTo(450,250);
+      context.closePath();
+
+      context.fillStyle = "blue";
+      context.fill();
+
+      context.lineWidth = 10;
+      context.strokeStyle = "red";
+      context.stroke();
+    }
+  </script> -->
+
+  <!-- script3 -->
+  <!-- <script>
+    window.onload = function(){
+      let canvas = document.getElementById('drawingCanvas');
+      let context = canvas.getContext('2d');
+
+      context.fillRect(0,10,100,200)
+    }
+  </script> -->
+
+  <!-- script4 -->
+  <!-- <script>
+    window.onload = function(){
+      let canvas = document.getElementById('drawingCanvas');
+      let context = canvas.getContext('2d');
+
+      let centerX = 150;
+      let centerY = 300;
+      let radius = 100;
+      let startingAngle = 0;
+      let endingAngle = 2 * Math.PI;
+
+      context.arc(centerX, centerY, radius, startingAngle, endingAngle);
+      context.stroke();
+    }
+  </script> -->
+
+  <!-- script5 -->
+  <!-- <script>
+    window.onload = function(){
+      let canvas = document.getElementById('drawingCanvas');
+      let context = canvas.getContext('2d');
+
+      // context.rect(0,0,30,30);
+      // context.rect(50,50,30,30);
+      // context.rect(100,100,30,30);
+
+      // context.stroke();
+      context.rect(0,0,30,30);
+      context.translate(50,50);
+      context.rect(0,0,30,30);
+
+      context.translate(50,50);
+      context.rect(0,0,30,30);
+
+      context.stroke();
+    }
+  </script> -->
+
+  <!-- script6 -->
+  <!-- <script>
+    <script>
+    window.onload = function(){
+      let canvas = document.getElementById('drawingCanvas');
+      let context = canvas.getContext('2d');
+
+      canvas.onmousedown = startDrawing;
+      canvas.onmouseup = stopDrawing;
+      canvas.onmouseout = stopDrawing;
+      canvas.onmousemove = draw;
+    }
+  </script>
+  </script> -->
+</body>
+</html>
